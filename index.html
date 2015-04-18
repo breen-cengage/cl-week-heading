@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		<link rel="import" href="bower_components/polymer/polymer.html">
+		<link rel="import" href="cl-week-heading.html">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="standalone.css">
+	</head>
+
+	<body class="row">
+		<cl-weekview></cl-weekview>
+
+		<dom-module id="cl-week">
+			<template>
+				<style>
+					.cl-week {
+						height: 100%;
+					}
+
+					.cl-week.current-week {
+						margin: 0px 16px;
+						background: white;
+					}
+
+					.cl-week.prev-week, .cl-week.next-week {
+						background: #455A64;
+						opacity: 0.9;
+					}
+				</style>
+				<cl-week-heading week="{{week}}"></cl-week-heading>
+			</template>
+		</dom-module>
+
+		<dom-module id="cl-weekview">
+			<template>
+				<cl-week class="cl-week prev-week col-xs-2" week="{{prevWeek}}"></cl-week>
+				<cl-week class="cl-week current-week col-xs-6" week="{{currentWeek}}"></cl-week>
+				<cl-week class="cl-week next-week col-xs-2" week="{{nextWeek}}"></cl-week>
+			</template>
+		</dom-module>
+
+		<script>
+			Polymer({
+				is: 'cl-week',
+				properties: {
+					week: Object
+				}
+			});
+
+			Polymer({
+				is: 'cl-weekview',
+				properties: {
+					prevWeek: {
+						type: Object,
+						value: {
+							number: 4,
+							startDate: 'Apr 10',
+							endDate: 'Apr 16'
+						}
+					},
+					currentWeek: {
+						type: Object,
+						value: {
+							number: 5,
+							startDate: 'Apr 17',
+							endDate: 'Apr 23'
+						}
+					},
+					nextWeek: {
+						type: Object,
+						value: {
+							number: 6,
+							startDate: 'Apr 24',
+							endDate: 'Apr 30'
+						}
+					},
+				}
+			});
+		</script>
+	</body>
+</html>

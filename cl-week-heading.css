@@ -1,0 +1,17 @@
+.cl-week-heading .week-number {
+  font-size: 40px;
+  font-weight: bold;
+  float: left; }
+
+.cl-week-heading .week-dates {
+  color: grey;
+  font-size: 16px;
+  line-height: 60px;
+  float: right; }
+
+.cl-week.prev-week .cl-week-heading .week-dates, .cl-week.next-week .cl-week-heading .week-dates {
+  display: none; }
+.cl-week.prev-week .cl-week-heading .week-number {
+  float: right; }
+
+/*# sourceMappingURL=cl-week-heading.css.map */

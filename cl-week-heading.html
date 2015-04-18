@@ -1,0 +1,28 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+<dom-module id="cl-week-heading">
+	<template>
+
+		<link rel="stylesheet" href="cl-week-heading.css">
+
+		<div class="cl-week-heading">
+			<span class="week-number" role="heading">
+				Week <span>{{week.number}}</span>
+			</span>
+			<span class="week-dates">
+				<span>{{week.startDate}}</span> - <span>{{week.endDate}}</span>
+			</span>
+		</div>
+
+	</template>
+</dom-module>
+
+<script>
+	Polymer({
+		is: 'cl-week-heading',
+		properties: {
+			week: Object
+		}
+	});
+</script>
